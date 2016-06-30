@@ -6,13 +6,13 @@
 
 ## What is it?
 
-`json-di` is a module for loading and initializing other modules through JSON configuration files. The main reason for this is that JSON files are much easier to modify and analyze than source code directly. They allow tools like generators to understand and modify your application structure and dependencies which otherwise would only be possible with messy templates and brittle abstract syntax tree transformations. [feathers-bootstrap](https://github.com/feathersjs/feathers-bootstrap) uses it to easily create a configure [Feathers](http://feathersjs.com/) applications.
+`json-di` is a module for loading and initializing other modules through JSON configuration files. The main reason for this is that JSON files are much easier to modify and analyze than source code directly. They allow tools like generators to understand and modify your application structure and dependencies which otherwise would only be possible with messy templates and brittle abstract syntax tree transformations.
+
+[feathers-bootstrap](https://github.com/feathersjs/feathers-bootstrap) uses it to easily create and configure [Feathers](http://feathersjs.com/) applications.
 
 ## Usage
 
 > npm install node-di
-
-### Basics
 
 `node-di` requires a data object, a parent filename (usually `__dirname`) and an optional converter which can run to convert properties and returns a standard `Promise`:
 
