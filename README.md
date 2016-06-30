@@ -10,6 +10,8 @@
 
 ## Usage
 
+> npm install node-di
+
 ### Basics
 
 `node-di` requires a data object, a parent filename (usually `__dirname`) and an optional converter which can run to convert properties and returns a standard `Promise`:
@@ -45,19 +47,20 @@ module.exports = function(options) {
 
 A `world.js` like this:
 
-```
+```js
 module.exports = 'World';
 ```
 
 And a `main.json` like this:
 
-```
+```js
 {
   "require": "./mainmodule",
   "options": {
     "text": { "require": "./world" }
   }
 }
+```
 
 `node-di` can be used like this:
 
