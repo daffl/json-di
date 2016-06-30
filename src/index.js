@@ -128,4 +128,4 @@ export default function loadAndProcess(data, parent, convert) {
   return process(loaded, convert);
 }
 
-Object.assign(loadAndProcess, { load, process });
+assign(loadAndProcess, { load, process });
