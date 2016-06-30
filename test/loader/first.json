@@ -1,0 +1,11 @@
+{
+  "require": "./sub/with-options",
+  "options": {
+    "test": {
+      "require": "./sub/second.json"
+    },
+    "other": "thing",
+    "path": { "require": "path" }
+  },
+  "extended": { "require": "./sub/hello" }
+}

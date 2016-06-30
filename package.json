@@ -1,0 +1,57 @@
+{
+  "name": "json-di",
+  "description": "Dependency injection through JSON JavaScript objects",
+  "version": "0.0.0",
+  "homepage": "https://github.com/daffl/json-di",
+  "main": "lib/",
+  "keywords": [
+    "json",
+    "dependency-injection"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/daffl/json-di.git"
+  },
+  "author": {
+    "name": "David Luecke",
+    "email": "daff@neyeon.com",
+    "url": "https://feathersjs.com"
+  },
+  "contributors": [],
+  "bugs": {
+    "url": "https://github.com/daffl/json-di/issues"
+  },
+  "engines": {
+    "node": ">= 0.12.0"
+  },
+  "scripts": {
+    "prepublish": "npm run compile",
+    "publish": "npm run changelog && git push origin && git push origin --tags",
+    "release:patch": "npm version patch && npm publish",
+    "release:minor": "npm version minor && npm publish",
+    "release:major": "npm version major && npm publish",
+    "changelog": "github_changelog_generator && git add CHANGELOG.md && git commit -am \"Updating changelog\"",
+    "compile": "rimraf lib/ && babel -d lib/ src/",
+    "watch": "babel --watch -d lib/ src/",
+    "jshint": "jshint src/. test/. --config",
+    "mocha": "mocha --recursive test/ --compilers js:babel-core/register",
+    "test": "npm run compile && npm run jshint && npm run mocha"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "debug": "^2.2.0",
+    "lodash": "^4.13.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.10.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.9.0",
+    "jshint": "^2.9.2",
+    "mocha": "^2.5.3",
+    "rimraf": "^2.5.2"
+  }
+}
