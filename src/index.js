@@ -97,8 +97,12 @@ function process(data, convert = value => value) {
       // If the module is a function and `options` or `arguments`
       // is specified in the configuration, run that function with options or arguments
       if(result.options && typeof mod === 'function') {
-        const args = Array.isArray(result.options) ?
-          result.options : [ result.options ];
+        if (!Array.isArray(result.options)) {
+            throw new Error(`Options for ${data.require} have to be an array`);
+        }
+
+        const args = result.options;
+
         debug(`Calling function returned from ${data.require} with`, args);
 
         // Call the module with the given arguments since it can return a
