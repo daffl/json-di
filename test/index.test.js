@@ -14,7 +14,7 @@ describe('json-di', () => {
       require: './loader/first.json'
     }, __filename);
 
-    assert.equal(result.module.options.test.module.module, 'world');
+    assert.equal(result.module.options[0].test.module.module, 'world');
   });
 
   it('`load` can require Node builtins', function() {
@@ -25,7 +25,7 @@ describe('json-di', () => {
     assert.equal(result.module, require('path'));
   });
 
-  it('`process` simple processing', function(done) {
+  it('`process` returns an error when options is not an array', function(done) {
     process({
       require: 'somewhere.json',
       module: {
@@ -33,6 +33,24 @@ describe('json-di', () => {
           return `${opts.test} ran`;
         },
         options: { test: 'testing' }
+      }
+    }).then(() => {
+      assert.equal(true, false, 'Should not get here');
+      done();
+    }).catch(error => {
+      assert.notEqual(error, undefined);
+      done();
+    });
+  });
+
+  it('`process` simple processing', function(done) {
+    process({
+      require: 'somewhere.json',
+      module: {
+        module: function(opts) {
+          return `${opts.test} ran`;
+        },
+        options: [{ test: 'testing' }]
       }
     }).then(data => {
       assert.equal(data, 'testing ran');
@@ -47,7 +65,7 @@ describe('json-di', () => {
         module: function(opts) {
           return { result: `${opts.test} ran` };
         },
-        options: { test: 'testing' },
+        options: [{ test: 'testing' }],
         hi: 'there',
         otherOption: { test: true }
       }
@@ -79,7 +97,7 @@ describe('json-di', () => {
             setTimeout(() => resolve(`${options.test} ran`), 100)
           );
         },
-        options: { test: 'testing' }
+        options: [{ test: 'testing' }]
       }
     }).then(data => {
       assert.equal(data, 'testing ran');

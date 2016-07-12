@@ -35,7 +35,7 @@ di({
 
 ### `options`
 
-If the module declared in `require` returns a function and the `options` property is an array or object the function will be called with the processed options. The function can return a promise in which case it will wait until the promise is resolved. With a `mainmodule.js` like this:
+If the module declared in `require` returns a function the `options` property will be passed as the `arguments` to that function. The function can return a promise in which case it will wait until the promise is resolved. With a `mainmodule.js` like this:
 
 ```js
 module.exports = function(options) {
@@ -56,9 +56,9 @@ And a `main.json` like this:
 ```js
 {
   "require": "./mainmodule",
-  "options": {
+  "options": [{
     "text": { "require": "./world" }
-  }
+  }]
 }
 ```
 
