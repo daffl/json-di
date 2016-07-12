@@ -1,8 +1,7 @@
 # Change Log
 
-## [Unreleased](https://github.com/daffl/json-di/tree/HEAD)
-
-[Full Changelog](https://github.com/daffl/json-di/compare/v0.1.0...HEAD)
+## [v0.2.0](https://github.com/daffl/json-di/tree/v0.2.0) (2016-07-12)
+[Full Changelog](https://github.com/daffl/json-di/compare/v0.1.0...v0.2.0)
 
 **Merged pull requests:**
 
