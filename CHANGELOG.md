@@ -1,5 +1,13 @@
 # Change Log
 
+## [Unreleased](https://github.com/daffl/json-di/tree/HEAD)
+
+[Full Changelog](https://github.com/daffl/json-di/compare/v0.1.0...HEAD)
+
+**Merged pull requests:**
+
+- Making it so that options must be an array [\#1](https://github.com/daffl/json-di/pull/1) ([ekryski](https://github.com/ekryski))
+
 ## [v0.1.0](https://github.com/daffl/json-di/tree/v0.1.0) (2016-06-30)
 
 
