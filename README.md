@@ -12,12 +12,12 @@
 
 ## Usage
 
-> npm install node-di
+> npm install json-di
 
-`node-di` requires a data object, a parent filename (usually `__dirname`) and an optional converter which can run to convert properties and returns a standard `Promise`:
+`json-di` requires a data object, a parent filename (usually `__dirname`) and an optional converter which can run to convert properties and returns a standard `Promise`:
 
 ```js
-const di = require('node-di');
+const di = require('json-di');
 
 di({
   path: { require: "path" },
@@ -62,10 +62,10 @@ And a `main.json` like this:
 }
 ```
 
-`node-di` can be used like this:
+`json-di` can be used like this:
 
 ```js
-const di = require('node-di');
+const di = require('json-di');
 
 di({
   require: "./main.json"
