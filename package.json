@@ -1,7 +1,7 @@
 {
   "name": "json-di",
   "description": "Dependency injection through JSON JavaScript objects",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/daffl/json-di",
   "main": "lib/",
   "keywords": [
