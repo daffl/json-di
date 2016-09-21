@@ -43,7 +43,7 @@ function load(mod, parent) {
     try {
       loadedModule = require(location);
     } catch(error) {
-      throw new Error(`Can not load module ${name} defined in ${parent} (\`${JSON.stringify(data)}\`)`);
+      throw new Error(`Cannot load module ${name} defined in ${parent} (\`${JSON.stringify(data)}\`), ${error.message}`);
     }
 
     if(path.extname(name) === '.json') {
