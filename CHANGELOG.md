@@ -1,5 +1,13 @@
 # Change Log
 
+## [Unreleased](https://github.com/daffl/json-di/tree/HEAD)
+
+[Full Changelog](https://github.com/daffl/json-di/compare/v0.2.0...HEAD)
+
+**Merged pull requests:**
+
+- Include the original node error message when a module cannot load. [\#2](https://github.com/daffl/json-di/pull/2) ([marshallswain](https://github.com/marshallswain))
+
 ## [v0.2.0](https://github.com/daffl/json-di/tree/v0.2.0) (2016-07-12)
 [Full Changelog](https://github.com/daffl/json-di/compare/v0.1.0...v0.2.0)
 
